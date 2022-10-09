@@ -15,7 +15,6 @@
 
 ## GET ##
 ```bash
-# 
 localhost:9090/todos
 ```
 
