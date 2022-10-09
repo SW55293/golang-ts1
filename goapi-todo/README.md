@@ -21,7 +21,6 @@ localhost:9090/todos
 
 ## POST ##
 ```bash
-# 
 localhost:9090/todos
 
 # In Raw JSON format
@@ -34,18 +33,15 @@ localhost:9090/todos
 
 ## PATCH ##
 ```bash
-# 
 localhost:9090/todos/1
 
-# IFlipping completion status with PATCH
+# Flipping completion status with PATCH
 {
     "id": "4",
     "item": "sleep",
     "completed": true
 }
 ```
-
-
 
 
 &#xa0;
