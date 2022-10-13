@@ -1,7 +1,9 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"os"
 
 	"github.com/gocolly/colly"
 )
@@ -33,9 +35,19 @@ func main() {
 		c.Visit(next_page)
 	})
 
-	// c.OnRequest()
+	c.OnRequest(func(r *colly.Request) {
+		fmt.Println(r.URL.String())
+	})
 
 	c.Visit("http://j2store.net/demo/index.php/shop")
-	fmt.Println(items)
+	// fmt.Println(items)
+
+	content, err := json.Marshal(items)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	os.WriteFile("products.json", content, 0644)
 
 }
