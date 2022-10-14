@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Lint Filenames
-      - uses: batista/lint-filenames@v1.0.1
+        uses: batista/lint-filenames@v1.0.1
         with:
           path: 'prod/us/*.yaml'
           pattern: "^[_]*$"
