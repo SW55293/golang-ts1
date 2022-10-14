@@ -8,15 +8,17 @@ jobs:
   validate-yaml:
     runs-on: ubuntu-latest
     steps:
-      - name: Lint Filenames
+      - name: Check for hyphens
         uses: batista/lint-filenames@v1.0.1
         with:
           path: 'prod/*.yaml'
-          pattern: "^*[_]*$"
+          pattern: "^[-]*"
       
-      - name: .yaml files
+      - name: Check for .yaml files
         uses: ./
         with:
           path: 'prod/us/*.yaml'
           pattern: "\\.yaml$"
+
+
 
