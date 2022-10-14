@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: batista/lint-filenames@v1.0.1
       - name: Lint Filenames
-        path: prod/us/*.yaml
-        pattern: "^[_]*$"
+      with:
+        path: 'prod/us/*.yaml'
+        pattern: '^[_]*$'
 
