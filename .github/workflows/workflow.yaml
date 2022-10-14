@@ -11,8 +11,8 @@ jobs:
       - name: Lint Filenames
         uses: batista/lint-filenames@v1.0.1
         with:
-          path: 'prod/us/*.yaml'
-          pattern: "^[_]*$"
+          path: 'prod/*.yaml'
+          pattern: "^*[_]*$"
       
       - name: .yaml files
         uses: ./
