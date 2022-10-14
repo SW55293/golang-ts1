@@ -8,17 +8,19 @@ jobs:
   validate-yaml:
     runs-on: ubuntu-latest
     steps:
+      - name: Check for only .yaml file extension
+        uses: batista/lint-filenames@v1.0.1
+        with:
+          path: 'prod/us'
+          pattern: "\\.yaml$"
+
       - name: Check for undescores
         uses: batista/lint-filenames@v1.0.1
         with:
           path: 'prod/'
           pattern: "^_+"
       
-      - name: Check for only .yaml file extension
-        uses: ./
-        with:
-          path: 'prod/us'
-          pattern: "\\.yaml$"
+
 
 
 
