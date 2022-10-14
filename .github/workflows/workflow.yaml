@@ -8,6 +8,8 @@ jobs:
   validate-yaml:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Validate YAML file
-        run: yamllint . -c .config/yamllint/config/config.yamllint prod/us/*.yaml
+      - uses: batista/lint-filenames@v1.0.1
+      - name: Lint Filenames
+        path: prod/us/*.yaml
+        pattern: "^[_]*$"
+
