@@ -11,13 +11,13 @@ jobs:
       - name: Check for only .yaml file extension
         uses: batista/lint-filenames@v1.0.1
         with:
-          path: './tests/'
+          path: './tests'
           pattern: "\\.yaml$"
 
       - name: Check for undescores
         uses: batista/lint-filenames@v1.0.1
         with:
-          path: './tests/'
+          path: './tests'
           pattern: "^_+"
       
 
