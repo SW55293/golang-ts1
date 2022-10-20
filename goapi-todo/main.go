@@ -1,15 +1,15 @@
 package main
 
 import (
-	"net/http"
-	"github.com/gin-gonic/gin"
 	"errors"
+	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 type todo struct {
-	ID        string	`json:"id"`
-	Item      string	`json:"item"`
-	Completed bool		`json:"completed"`
+	ID        string `json:"id"`
+	Item      string `json:"item"`
+	Completed bool   `json:"completed"`
 }
 
 var todos = []todo{
@@ -19,20 +19,20 @@ var todos = []todo{
 }
 
 func getTodos(context *gin.Context) {
-	context.IndentedJSON(http.StatusOK, todos) 
+	context.IndentedJSON(http.StatusOK, todos)
 }
 
 func addTodos(context *gin.Context) {
 	var newTodo todo
 
 	if err := context.BindJSON(&newTodo); err != nil {
-		return 
+		return
 	}
 
 	todos = append(todos, newTodo)
 
 	context.IndentedJSON(http.StatusCreated, newTodo)
-	 
+
 }
 
 func getTodoId(id string) (*todo, error) {
@@ -40,7 +40,7 @@ func getTodoId(id string) (*todo, error) {
 		if t.ID == id {
 			return &todos[i], nil
 		}
-	} 
+	}
 	return nil, errors.New("todo not found")
 }
 

@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check for only .yaml file extension
-        uses: batista/lint-filenames@v1.0.1
+        uses: golangci/golangci-lint-action@v3.2.0
         with:
           path: './tests'
           pattern: "\\.yaml$"
 
       - name: Check for undescores
-        uses: batista/lint-filenames@v1.0.1
+        uses: golangci/golangci-lint-action@v3.2.0
         with:
           path: './tests'
           pattern: "^_+"
