@@ -17,7 +17,16 @@ var rootCmd = &cobra.Command{
 	Long:  `Testing and Practicing the CLI application from Cobra`,
 
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Whats up")
+
+		flagVal, err := cmd.Flags().GetBool("toggle")
+		if err != nil {
+			return
+		}
+		if flagVal {
+			fmt.Println("Whats up Bitches!! == Not Set (False)")
+			return
+		}
+		fmt.Println("Whats up Bitches!! == Set (True)")
 	},
 }
 
@@ -39,5 +48,5 @@ func init() {
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	rootCmd.Flags().BoolP("toggle", "t", false, "Flip toggle value")
 }
