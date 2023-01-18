@@ -1,0 +1,7 @@
+rules: 
+  - id: simple_check
+  languages: 
+       - go
+  message: Checking for the word Hello
+  pattern: "Hello"
+  severity: INFO
