@@ -20,9 +20,3 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: semgrep ci
-rule: 
-  - id: simple_check
-  languages: [go]
-  message: Checking for the word Hello
-  pattern: "Hello"
-  severity: INFO
